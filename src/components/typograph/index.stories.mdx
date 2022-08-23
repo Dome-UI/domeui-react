@@ -1,0 +1,54 @@
+<!-- Typography.stories.mdx -->
+
+import { Meta, Typeset } from '@storybook/addon-docs/blocks';
+
+<Meta title="Style guide/Typography" />
+
+export const typography = {
+  type: {
+    primary: '"Nunito Sans", "Helvetica Neue", Helvetica, Arial, sans-serif',
+  },
+  weight: {
+    regular: '400',
+    bold: '700',
+    extrabold: '900',
+  },
+  size: {
+    s1: 12,
+    s2: 16,
+    s3: 18,
+    m1: 25,
+    m2: 31,
+    m3: 39,
+    l1: 49,
+    l2: 61,
+    l3: 76,
+  },
+};
+
+export const SampleText = 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.';
+
+# Typography
+
+---
+
+**Font:** Nunito Sans
+
+**Weights:** 400(medium), 700(bold), 900(black)
+
+<Typeset
+  fontSizes={[
+    Number(typography.size.s1),
+    Number(typography.size.s2),
+    Number(typography.size.s3),
+    Number(typography.size.m1),
+    Number(typography.size.m2),
+    Number(typography.size.m3),
+    Number(typography.size.l1),
+    Number(typography.size.l2),
+    Number(typography.size.l3),
+  ]}
+  fontWeight={typography.weight.black}
+  sampleText={SampleText}
+  fontFamily={typography.type.primary}
+/>

@@ -1,0 +1,252 @@
+import { Meta, Story, Canvas, ArgsTable } from '@storybook/addon-docs'
+import { Input } from './Input'
+
+<Meta
+  title="Components/Molecules/Input"
+  component={Input}
+  argTypes={{
+    iconOutsideLeft: {
+      name: 'Icon outside left',
+      control: {
+        type: 'select',
+      },
+      table: {
+        category: 'Icons',
+      },
+    },
+    iconOutsideLeftColor: {
+      name: 'Color outside left',
+      control: {
+        type: 'color',
+      },
+      table: {
+        category: 'Icons',
+      },
+    },
+    iconOutsideRight: {
+      name: 'Icon outside right',
+      control: {
+        type: 'select',
+      },
+      table: {
+        category: 'Icons',
+      },
+    },
+    iconOutsideRightColor: {
+      name: 'Color outside right',
+      control: {
+        type: 'color',
+      },
+      table: {
+        category: 'Icons',
+      },
+    },
+    iconInsideRight: {
+      name: 'Icon inside right',
+      control: {
+        type: 'select',
+      },
+      table: {
+        category: 'Icons',
+      },
+    },
+    iconInsideRightColor: {
+      name: 'Color inside right',
+      control: {
+        type: 'color',
+      },
+      table: {
+        category: 'Icons',
+      },
+    },
+    iconInsideLeft: {
+      name: 'Icon inside left',
+      control: {
+        type: 'select',
+      },
+      table: {
+        category: 'Icons',
+      },
+    },
+    iconInsideLeftColor: {
+      name: 'Color inside left',
+      control: {
+        type: 'color',
+      },
+      table: {
+        category: 'Icons',
+      },
+    },
+    inputSize: {
+      name: 'Input size',
+      control: {
+        type: 'select',
+      },
+      table: {
+        category: 'Input',
+      },
+    },
+    border: {
+      name: 'Input border',
+      control: {
+        type: 'select',
+      },
+      table: {
+        category: 'Input',
+      },
+    },
+    borderLineBottom: {
+      name: 'Input border line bottom',
+      table: {
+        category: 'Input',
+      },
+    },
+    type: {
+      name: 'Input type',
+      table: {
+        category: 'Input',
+      },
+    },
+    fullWidth: {
+      name: 'Input fill width',
+      table: {
+        category: 'Others',
+      },
+    },
+    outlineColor: {
+      name: 'Input border line bottom',
+      control: {
+        type: 'color',
+      },
+    },
+    textPlaceholder: {
+      name: 'Placeholder input text',
+    },
+    label: {
+      name: 'Label text',
+    },
+    ref: {
+      name: 'Ref',
+      control: {
+        type: 'disabled',
+      },
+      table: {
+        category: 'Others',
+      },
+    },
+    styles: {
+      name: 'Styles',
+      control: {
+        type: 'object',
+      },
+      table: {
+        category: 'Others',
+      },
+    },
+  }}
+  parameters={{
+    layout: 'centered',
+  }}
+/>
+
+# Input
+
+Input is the component that you use, for get user taps and clicks.
+
+```js
+import { Input } from 'domeui-components'
+```
+
+### Classnames
+
+```css
+/* Container */
+.DUI-containerInput {
+}
+
+/* Label */
+.DUI-label {
+}
+
+/* Flex Input (Suport Icons and Input) */
+.DUI-flexInput {
+}
+
+/* Icon Outside Left */
+.DUI-iconOutsideLeft {
+}
+
+/* Icon Inside Right */
+.DUI-iconInsideRight {
+}
+
+/* Input */
+.DUI-containerInput {
+}
+
+/* Icon Inside Right */
+.DUI-iconInsideRight {
+}
+
+/* Icon Outside Right */
+.DUI-iconOutsideRight {
+}
+```
+
+## Default
+
+<Canvas columns={2} withSource="open" withToolbar>
+  <Story name="Default" args={{ ...Input.defaultProps, label: 'Label here' }}>
+    {(args) => <Input {...args} />}
+  </Story>
+</Canvas>
+
+<ArgsTable story="Default" />
+
+## Icons Inside
+
+<Canvas>
+  <Story
+    name="Icons Inside"
+    args={{
+      ...Input.defaultProps,
+      label: 'Label here',
+      iconInsideLeft: 'FaArrowsAlt',
+      iconInsideRight: 'FaArrowsAlt',
+    }}
+  >
+    {(args) => <Input {...args} />}
+  </Story>
+</Canvas>
+
+## Icons Outside
+
+<Canvas>
+  <Story
+    name="Only Icon"
+    args={{
+      ...Input.defaultProps,
+      label: 'Label here',
+      iconOutsideLeft: 'FaArrowsAlt',
+      iconOutsideRight: 'FaArrowsAlt',
+    }}
+  >
+    {(args) => <Input {...args} />}
+  </Story>
+</Canvas>
+
+## Border Line Bottom
+
+<Canvas>
+  <Story
+    name="Border Line Bottom"
+    args={{
+      ...Input.defaultProps,
+      label: 'Label here',
+      borderLineBottom: true,
+      border: 'none',
+    }}
+  >
+    {(args) => <Input {...args} />}
+  </Story>
+</Canvas>

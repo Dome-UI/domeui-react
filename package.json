@@ -20,7 +20,7 @@
   ],
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Dome-UI/dome-ui.git"
+    "url": "git+https://github.com/Dome-UI/domeui-react.git"
   },
   "scripts": {
     "test": "parcel demo/index.html",
@@ -28,7 +28,8 @@
     "build": "rimraf lib && rimraf .cache && rimraf dist-storybook && rollup -c && build-storybook -o dist-storybook",
     "build:types": "tsc --emitDeclarationOnly --skipLibCheck",
     "post:build": "npm run build:types",
-    "chromatic": "npx chromatic --project-token=a0f91b389d2b"
+    "chromatic": "npx chromatic --project-token=7ef98be71e88",
+    "build-storybook": "build-storybook"
   },
   "peerDependencies": {
     "@stitches/react": "^1.2.7",
@@ -59,6 +60,7 @@
     "@typescript-eslint/parser": "5.17.0",
     "babel-eslint": "^10.1.0",
     "babel-loader": "^8.2.4",
+    "chromatic": "^6.7.4",
     "core-js": "^3.0.1",
     "cross-env": "^7.0.3",
     "eslint": "8.12.0",

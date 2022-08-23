@@ -31,7 +31,7 @@ export function Button(props: ButtonProps): JSX.Element {
         ) : (
           <>
             {props.IconLeft && <IconLeft className="DUI-iconLeft" />}
-            {props.label}
+            {props.children}
             {props.IconRight && <IconRight className="DUI-iconRight" />}
           </>
         )}
