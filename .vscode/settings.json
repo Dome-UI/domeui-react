@@ -1,0 +1,5 @@
+{
+  "editor.formatOnSave": true,
+  "jest.pathToJest": "npm test --",
+  "jest.debugMode": true
+}

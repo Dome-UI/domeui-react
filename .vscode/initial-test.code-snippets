@@ -1,0 +1,19 @@
+{
+  "Component initial test": {
+    "prefix": ["test", "component-test"],
+    "body": [
+      "import React from 'react'",
+      "import { render } from '@testing-library/react'",
+      "import { $0 } from './'",
+      "",
+      "describe(':: $0', () => {",
+      "it('Should render the component', () => {",
+      "const { getByTestId } = render(<$0>valid-text</$0>)",
+      "expect(getByTestId('$1')).toBeTruthy()",
+      "})",
+      "})",
+      ""
+    ],
+    "description": "Initial test structure for components"
+  }
+}

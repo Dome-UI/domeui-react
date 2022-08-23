@@ -1,0 +1,16 @@
+.vscode
+.gitignore
+.nvmrc
+.npmrc*
+.prettierrc
+.editorconfig
+jest.*
+/src
+/demo
+/test-results
+/coverage
+*tar.gz
+*.txt
+fileTest
+rollup.*
+ts*.json
