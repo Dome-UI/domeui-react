@@ -11,12 +11,12 @@ export interface ButtonProps extends HTMLAttributes<HTMLButtonElement> {
   fullHeight?: boolean
   hoverColor?: string
   clickColor?: string
-  buttonSize: keyof typeof buttonSize
-  border: keyof typeof border
+  buttonSize?: keyof typeof buttonSize
+  border?: keyof typeof border
   styles?: {}
-  IconLeft: keyof typeof iconSet
-  IconRight: keyof typeof iconSet
-  IconCenter: keyof typeof iconSet
+  IconLeft?: keyof typeof iconSet
+  IconRight?: keyof typeof iconSet
+  IconCenter?: keyof typeof iconSet
 }
 
 export interface ButtonStylesProps {
