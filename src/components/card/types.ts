@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/ban-types */
 import * as iconSet from 'react-icons/fa'
 import { positionTitle, border, shadow } from './theme'
 

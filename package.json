@@ -1,6 +1,6 @@
 {
   "name": "domeui-react",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "author": "DomeUI",
   "license": "MIT",
   "keywords": [
@@ -26,8 +26,7 @@
     "test": "parcel demo/index.html",
     "dev": "start-storybook -p 6006",
     "build": "rimraf lib && rimraf .cache && rimraf dist-storybook && rollup -c && build-storybook -o dist-storybook",
-    "build:types": "tsc --emitDeclarationOnly --skipLibCheck",
-    "post:build": "npm run build:types"
+    "build:types": "tsc --emitDeclarationOnly --skipLibCheck"
   },
   "peerDependencies": {
     "react": "^17.0.2"
@@ -77,7 +76,7 @@
     "styled-components": "^5.3.5"
   },
   "bugs": {
-    "url": "https://github.com/Dome-UI/dome-ui/issues"
+    "url": "https://github.com/Dome-UI/dome-ui-react/issues"
   },
   "homepage": "https://github.com/Dome-UI/domeui-react#readme"
 }

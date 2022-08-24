@@ -2,7 +2,7 @@ import { Meta, Story, Canvas, ArgsTable } from "@storybook/addon-docs";
 import { Card } from "./Card";
 
 <Meta
-  title="Components/Cells/Card"
+  title="Components/Card"
   component={Card}
   argTypes={{
     title: {
@@ -162,7 +162,7 @@ import { Card } from "./Card";
 Card is the component that you use, for get user taps and clicks.
 
 ```js
-import { Card } from "domeui-components";
+import { Card } from "domeui-react";
 ```
 
 ### Classnames
@@ -268,7 +268,7 @@ import { Card } from "domeui-components";
     name="Title and Image"
     args={{
       ...Card.defaultProps,
-      title: "ASDASD",
+      title: "Write your title",
       imageUrl:
         "https://blog.iprocess.com.br/wp-content/uploads/2021/11/placeholder.png",
     }}
@@ -284,7 +284,7 @@ import { Card } from "domeui-components";
     name="Description"
     args={{
       ...Card.defaultProps,
-      title: "ASDASD",
+      title: "Write your title",
       imageUrl:
         "https://blog.iprocess.com.br/wp-content/uploads/2021/11/placeholder.png",
       buttonReadMore: true,

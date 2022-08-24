@@ -1,1 +1,6 @@
 export * from './components/button'
+export * from './components/card'
+export * from './components/flex'
+export * from './components/input'
+export * from './components/simpleCard'
+export * from './components/text'
