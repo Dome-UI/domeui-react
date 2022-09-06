@@ -24,14 +24,18 @@ export function Button(props: ButtonProps): JSX.Element {
   ]
 
   return (
-    <Container props={finalProps} className="DUI-button">
+    <Container
+      props={finalProps}
+      className="DUI-button"
+      role="button"
+    >
       <>
         {props.IconCenter ? (
-          <IconCenter className="DUI-iconCenter" />
+          <IconCenter className="DUI-iconCenter" role="img" title="Icon button"/>
         ) : (
           <>
             {props.IconLeft && <IconLeft className="DUI-iconLeft" />}
-            {props.children}
+            {props.children ? props.children : props.label}
             {props.IconRight && <IconRight className="DUI-iconRight" />}
           </>
         )}
