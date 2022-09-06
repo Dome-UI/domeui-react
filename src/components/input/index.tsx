@@ -31,13 +31,18 @@ export function Input(props: InputProps) {
       props.iconInsideRight ||
       props.iconOutsideLeft ||
       props.iconOutsideRight ? (
-        <Container props={finalProps} className="DUI-containerInput">
+        <Container
+          props={finalProps}
+          className="DUI-containerInput"
+          role="group"
+        >
           {props.label && <label className="DUI-label">{props.label}</label>}
           <Flex className="DUI-flexInput">
             {props.iconOutsideLeft && (
               <IconOutsideLeft
                 color={props.iconOutsideLeftColor}
                 className="DUI-iconOutsideLeft"
+                aria-hidden="true"
               />
             )}
             <Content>
@@ -51,6 +56,7 @@ export function Input(props: InputProps) {
                   }}
                   color={props.iconInsideLeftColor}
                   className="DUI-iconInsideLeft"
+                  aria-hidden="true"
                 />
               )}
               <InputContainer
@@ -69,6 +75,7 @@ export function Input(props: InputProps) {
                   }}
                   color={props.iconInsideRightColor}
                   className="DUI-iconInsideRight"
+                  aria-hidden="true"
                 />
               )}
             </Content>
@@ -76,6 +83,7 @@ export function Input(props: InputProps) {
               <IconOutsideRight
                 color={props.iconOutsideRightColor}
                 className="DUI-iconOutsideRight"
+                aria-hidden="true"
               />
             )}
           </Flex>
