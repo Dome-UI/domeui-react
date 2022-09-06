@@ -27,6 +27,7 @@ export function SimpleCard(props: CardProps) {
         <ContainerIcon
           props={finalProps}
           className="DUI-containerIcon-SimpleCard"
+          aria-hidden="true"
         >
           <Icon
             color={props.iconColor}
@@ -39,7 +40,9 @@ export function SimpleCard(props: CardProps) {
       {props.title && <p className="DUI-title-SimpleCard">{props.title}</p>}
       {/* Description */}
       {props.description && (
-        <span className="DUI-description-SimpleCard">{props.description}</span>
+        <span className="DUI-description-SimpleCard" role="contentinfo">
+          {props.description}
+        </span>
       )}
     </Container>
   )
