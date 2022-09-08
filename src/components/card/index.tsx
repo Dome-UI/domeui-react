@@ -52,6 +52,8 @@ export function Card(props: CardProps) {
             href={props.buttonLeftTitleHref}
             target="_blank"
             className="DUI-buttonLeftTitleHref"
+            role="link"
+            aria-label="External link"
           >
             <ButtonLeftTitle
               color={props.buttonLeftTitleColor}
@@ -68,6 +70,8 @@ export function Card(props: CardProps) {
             href={props.buttonRightTitleHref}
             target="_blank"
             className="DUI-buttonRightTitleHref"
+            role="link"
+            aria-label="External link"
           >
             <ButtonRightTitle
               color={props.buttonRightTitleColor}
@@ -78,7 +82,13 @@ export function Card(props: CardProps) {
       </Header>
 
       {/* Image */}
-      {props.imageUrl && <img src={props.imageUrl} className="DUI-imageCard" />}
+      {props.imageUrl && (
+        <img
+          src={props.imageUrl}
+          className="DUI-imageCard"
+          alt={props.imageAlt ? props.imageAlt : 'Default Alt'}
+        />
+      )}
 
       {/* Footer */}
       {props.buttonRightDescription ||
@@ -96,6 +106,8 @@ export function Card(props: CardProps) {
                   href={props.buttonLeftDescriptionHref}
                   target="_blank"
                   className="DUI-buttonLeftDescriptionHref"
+                  role="link"
+                  aria-label="External link"
                 >
                   <ButtonLeftDescription
                     color={props.buttonLeftDescriptionColor}
@@ -109,6 +121,8 @@ export function Card(props: CardProps) {
                   href={props.buttonRightDescriptionHref}
                   target="_blank"
                   className="DUI-buttonRightDescriptionHref"
+                  role="link"
+                  aria-label="External link"
                 >
                   <ButtonRightDescription
                     color={props.buttonRightDescriptionColor}
@@ -157,6 +171,8 @@ Card.defaultProps = {
   buttonRightTitleColor: '#6648FF',
   buttonLeftDescriptionColor: '#6648FF',
   buttonRightDescriptionColor: '#6648FF',
+
+  imageAlt: '',
 
   border: 'small',
   shadow: 'medium',
