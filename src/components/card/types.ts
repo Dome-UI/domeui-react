@@ -6,6 +6,7 @@ export interface CardProps {
   title?: string
   positionTitle?: keyof typeof positionTitle
   imageUrl?: string
+  imageAlt?: string
   backgroundColor?: string
   border?: keyof typeof border
   shadow?: keyof typeof shadow

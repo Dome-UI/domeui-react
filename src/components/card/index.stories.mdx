@@ -1,159 +1,165 @@
-import { Meta, Story, Canvas, ArgsTable } from "@storybook/addon-docs";
-import { Card } from "./Card";
+import { Meta, Story, Canvas, ArgsTable } from '@storybook/addon-docs'
+import { Card } from './index'
 
 <Meta
   title="Components/Card"
   component={Card}
   argTypes={{
     title: {
-      name: "Text title",
+      name: 'Text title',
       table: {
-        category: "Header",
+        category: 'Header',
       },
     },
     positionTitle: {
-      name: "Position text title",
+      name: 'Position text title',
       control: {
-        type: "select",
+        type: 'select',
       },
       table: {
-        category: "Header",
+        category: 'Header',
       },
     },
     buttonLeftTitleHref: {
-      name: "Redirect button side left",
+      name: 'Redirect button side left',
       table: {
-        category: "Header",
+        category: 'Header',
       },
     },
     buttonLeftTitleColor: {
-      name: "Color button side left",
+      name: 'Color button side left',
       control: {
-        type: "color",
+        type: 'color',
       },
       table: {
-        category: "Header",
+        category: 'Header',
       },
     },
     buttonLeftTitle: {
-      name: "Icon button side left",
+      name: 'Icon button side left',
       table: {
-        category: "Header",
+        category: 'Header',
       },
     },
     buttonRightTitleHref: {
-      name: "Redirect button side right",
+      name: 'Redirect button side right',
       table: {
-        category: "Header",
+        category: 'Header',
       },
     },
     buttonRightTitleColor: {
-      name: "Color button side right",
+      name: 'Color button side right',
       control: {
-        type: "color",
+        type: 'color',
       },
       table: {
-        category: "Header",
+        category: 'Header',
       },
     },
     buttonRightTitle: {
-      name: "Icon button side right",
+      name: 'Icon button side right',
       table: {
-        category: "Header",
+        category: 'Header',
       },
     },
     imageUrl: {
-      name: "Image in card",
+      name: 'Image in card',
       table: {
-        category: "Container",
+        category: 'Container',
+      },
+    },
+    imageAlt: {
+      name: 'Alternative text in image',
+      table: {
+        category: 'Container',
       },
     },
     buttonLeftDescriptionHref: {
-      name: "Icon button side left",
+      name: 'Icon button side left',
       table: {
-        category: "Description",
+        category: 'Description',
       },
     },
     buttonLeftDescriptionColor: {
-      name: "Color button side left",
+      name: 'Color button side left',
       control: {
-        type: "color",
+        type: 'color',
       },
       table: {
-        category: "Description",
+        category: 'Description',
       },
     },
     buttonLeftDescription: {
-      name: "Icon button side left",
+      name: 'Icon button side left',
       table: {
-        category: "Description",
+        category: 'Description',
       },
     },
     buttonRightDescriptionHref: {
-      name: "Icon button side right",
+      name: 'Icon button side right',
       table: {
-        category: "Description",
+        category: 'Description',
       },
     },
     buttonRightDescriptionColor: {
-      name: "Color button side right",
+      name: 'Color button side right',
       control: {
-        type: "color",
+        type: 'color',
       },
       table: {
-        category: "Description",
+        category: 'Description',
       },
     },
     buttonRightDescription: {
-      name: "Icon button side right",
+      name: 'Icon button side right',
       table: {
-        category: "Description",
+        category: 'Description',
       },
     },
     description: {
-      name: "Show description text",
+      name: 'Show description text',
       table: {
-        category: "Description",
+        category: 'Description',
       },
     },
     buttonReadMore: {
-      name: "Show button collapsed description",
+      name: 'Show button collapsed description',
       table: {
-        category: "Description",
+        category: 'Description',
       },
     },
     descriptionText: {
-      name: "Text in description",
+      name: 'Text in description',
       table: {
-        category: "Description",
+        category: 'Description',
       },
     },
     backgroundColor: {
-      name: "Color in background",
+      name: 'Color in background',
       control: {
-        type: "color"
-      }
+        type: 'color',
+      },
     },
     border: {
-      name: "Border card",
+      name: 'Border card',
       control: {
-        type: "select"
-      }
+        type: 'select',
+      },
     },
     shadow: {
-      name: "Shadow card",
+      name: 'Shadow card',
       control: {
-        type: "select"
-      }
+        type: 'select',
+      },
     },
     styles: {
       table: {
-        category: "Others"
-      }
-    }
+        category: 'Others',
+      },
+    },
   }}
   parameters={{
-    layout: "centered",
+    layout: 'centered',
   }}
 />
 
@@ -162,7 +168,7 @@ import { Card } from "./Card";
 Card is the component that you use, for get user taps and clicks.
 
 ```js
-import { Card } from "domeui-react";
+import { Card } from 'domeui-react'
 ```
 
 ### Classnames
@@ -243,16 +249,16 @@ import { Card } from "domeui-react";
     name="Default"
     args={{
       ...Card.defaultProps,
-      title: "Write your title",
+      title: 'Write your title',
       imageUrl:
-        "https://blog.iprocess.com.br/wp-content/uploads/2021/11/placeholder.png",
-      buttonLeftTitle: "ArrowsAlt",
-      buttonRightTitle: "Bars",
+        'https://blog.iprocess.com.br/wp-content/uploads/2021/11/placeholder.png',
+      buttonLeftTitle: 'ArrowsAlt',
+      buttonRightTitle: 'Bars',
       buttonReadMore: true,
       description: true,
-      descriptionText: "Lorem ipsum",
-      buttonLeftDescription: "ArrowsAlt",
-      buttonRightDescription: "ArrowsAlt",
+      descriptionText: 'Lorem ipsum',
+      buttonLeftDescription: 'ArrowsAlt',
+      buttonRightDescription: 'ArrowsAlt',
     }}
   >
     {(args) => <Card {...args} />}
@@ -268,9 +274,9 @@ import { Card } from "domeui-react";
     name="Title and Image"
     args={{
       ...Card.defaultProps,
-      title: "Write your title",
+      title: 'Write your title',
       imageUrl:
-        "https://blog.iprocess.com.br/wp-content/uploads/2021/11/placeholder.png",
+        'https://blog.iprocess.com.br/wp-content/uploads/2021/11/placeholder.png',
     }}
   >
     {(args) => <Card {...args} />}
@@ -284,12 +290,12 @@ import { Card } from "domeui-react";
     name="Description"
     args={{
       ...Card.defaultProps,
-      title: "Write your title",
+      title: 'Write your title',
       imageUrl:
-        "https://blog.iprocess.com.br/wp-content/uploads/2021/11/placeholder.png",
+        'https://blog.iprocess.com.br/wp-content/uploads/2021/11/placeholder.png',
       buttonReadMore: true,
       description: true,
-      descriptionText: "Lorem ipsum",
+      descriptionText: 'Lorem ipsum',
     }}
   >
     {(args) => <Card {...args} />}
@@ -303,11 +309,11 @@ import { Card } from "domeui-react";
     name="Buttons Footer"
     args={{
       ...Card.defaultProps,
-      title: "Write your title",
+      title: 'Write your title',
       imageUrl:
-        "https://blog.iprocess.com.br/wp-content/uploads/2021/11/placeholder.png",
-      buttonLeftDescription: "ArrowsAlt",
-      buttonRightDescription: "ArrowsAlt",
+        'https://blog.iprocess.com.br/wp-content/uploads/2021/11/placeholder.png',
+      buttonLeftDescription: 'ArrowsAlt',
+      buttonRightDescription: 'ArrowsAlt',
     }}
   >
     {(args) => <Card {...args} />}
@@ -321,11 +327,11 @@ import { Card } from "domeui-react";
     name="Menu Header"
     args={{
       ...Card.defaultProps,
-      title: "Write your title",
+      title: 'Write your title',
       imageUrl:
-        "https://blog.iprocess.com.br/wp-content/uploads/2021/11/placeholder.png",
-      buttonLeftTitle: "ArrowsAlt",
-      buttonRightTitle: "Bars",
+        'https://blog.iprocess.com.br/wp-content/uploads/2021/11/placeholder.png',
+      buttonLeftTitle: 'ArrowsAlt',
+      buttonRightTitle: 'Bars',
     }}
   >
     {(args) => <Card {...args} />}
@@ -339,14 +345,14 @@ import { Card } from "domeui-react";
     name="Menu Footer"
     args={{
       ...Card.defaultProps,
-      title: "Write your title",
+      title: 'Write your title',
       imageUrl:
-        "https://blog.iprocess.com.br/wp-content/uploads/2021/11/placeholder.png",
+        'https://blog.iprocess.com.br/wp-content/uploads/2021/11/placeholder.png',
       description: true,
-      descriptionText: "Lorem ipsum",
+      descriptionText: 'Lorem ipsum',
       buttonReadMore: true,
-      buttonLeftDescription: "ArrowsAlt",
-      buttonRightDescription: "ArrowsAlt",
+      buttonLeftDescription: 'ArrowsAlt',
+      buttonRightDescription: 'ArrowsAlt',
     }}
   >
     {(args) => <Card {...args} />}
