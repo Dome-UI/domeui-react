@@ -7,4 +7,11 @@ module.exports = {
     '@storybook/addon-a11y',
   ],
   framework: '@storybook/react',
+  viteFinal: (config, { configType }) => {
+    if (configType == 'PRODUCTION') {
+      config.base = '/dpme-ui/'
+    }
+
+    return config
+  },
 }
