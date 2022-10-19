@@ -36,6 +36,9 @@ jobs:
       - name: Create .npmrc file
         run: echo "//registry.npmjs.org/:_authToken=${{ secrets.NPM_AUTH_TOKEN }}" > ~/.npmrc
 
+      - name: Authorize Npm
+        run: npm adduser
+
       - name: Publish package on NPM
         run: npm publish
         env:
