@@ -21,9 +21,6 @@ jobs:
       - name: Install dependencies and build 🔧
         run: npm ci && npm run build-storybook
 
-      - name: Deploy on Chromatic
-        run: npm run chromatic
-
       - name: Deploy Storybook on Github Pages
         run: npm run deploy-storybook -- --ci --existing-output-dir=storybook-static
         env:
