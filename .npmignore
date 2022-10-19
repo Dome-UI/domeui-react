@@ -1,7 +1,5 @@
 .vscode
 .gitignore
-.nvmrc
-.npmrc*
 .prettierrc
 .editorconfig
 jest.*
