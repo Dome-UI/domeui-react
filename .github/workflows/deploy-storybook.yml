@@ -30,6 +30,11 @@ jobs:
         env:
           GH_TOKEN: ${{ github.actor }}:${{ secrets.GITHUB_TOKEN }}
 
+      - name: Publish on Chromatic
+        uses: chromaui/action@v1
+         with:
+          projectToken: ${{ secrets.CHROMATIC_PROJECT_TOKEN }}
+
       - name: Build lib
         run: npm run build && npm run build:types
 
