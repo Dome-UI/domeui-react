@@ -18,8 +18,11 @@ jobs:
         with:
           node-version: 16
 
-      - name: Install dependencies and build 🔧
-        run: npm ci && npm run build-storybook
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Build Storybook
+        run: npm run build-storybook
 
       - name: Deploy Storybook on Github Pages
         run: npm run deploy-storybook -- --ci --existing-output-dir=storybook-static

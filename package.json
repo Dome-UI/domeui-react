@@ -30,6 +30,7 @@
     "build": "rimraf lib && rimraf .cache && rimraf dist-storybook && rollup -c && build-storybook -o dist-storybook",
     "build:types": "tsc --emitDeclarationOnly --skipLibCheck",
     "build-storybook": "build-storybook",
+    "deploy-storybook": "storybook-to-ghpages",
     "chromatic": "chromatic"
   },
   "peerDependencies": {
