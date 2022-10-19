@@ -1,4 +1,4 @@
-name: Deploy Storybook
+name: Deploy Storybook and NPM
 
 on:
   push:
@@ -28,3 +28,12 @@ jobs:
         run: npm run deploy-storybook -- --ci --existing-output-dir=storybook-static
         env:
           GH_TOKEN: ${{ github.actor }}:${{ secrets.GITHUB_TOKEN }}
+
+      - name: Build lib
+        run: npm run build && npm run build:types
+
+      - name: Publish package on NPM
+        run: npm publish
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+

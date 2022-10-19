@@ -9,7 +9,7 @@ module.exports = {
   framework: '@storybook/react',
   viteFinal: (config, { configType }) => {
     if (configType == 'PRODUCTION') {
-      config.base = '/Dome-ui/domeui-react/'
+      config.base = '/dome-ui/domeui-react/'
     }
 
     return config
