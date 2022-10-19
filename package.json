@@ -27,7 +27,7 @@
   "scripts": {
     "test": "parcel demo/index.html",
     "dev": "start-storybook -p 6006",
-    "build": "rimraf lib && rimraf .cache && rimraf dist-storybook && rollup -c && build-storybook -o dist-storybook",
+    "build": "rimraf lib && rimraf .cache && rollup -c",
     "build:types": "tsc --emitDeclarationOnly --skipLibCheck",
     "build-storybook": "build-storybook",
     "deploy-storybook": "storybook-to-ghpages",
