@@ -4,7 +4,7 @@ Welcome to the **Dome** open source component React UI library.
 
 ## Explore the components in Storybook:
 
-[Storybook](https://dome-ui.vercel.app/)
+[Storybook](https://dome-ui.github.io/domeui-react/)
 
 ### How to use
 
