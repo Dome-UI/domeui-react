@@ -1,7 +1,9 @@
 name: Publish to NPM
+
 on:
-  branches:
-    - release
+  push:
+    branches:
+      - release
 
 jobs:
   build:
