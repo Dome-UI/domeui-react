@@ -8,16 +8,16 @@ export function Input(props: InputProps) {
   const borderRadius = borderTheme[props.border]
   const padding = sizeTheme[props.inputSize]
 
-  const [IconOutsideLeft, IconOutsideRight, IconInsideLeft, IconInsideRight] = [
-    iconSet[props.iconOutsideLeft] ||
-      iconSet[`Fa${props.iconOutsideLeft}` as unknown as never],
-    iconSet[props.iconOutsideRight] ||
-      iconSet[`Fa${props.iconOutsideRight}` as unknown as never],
-    iconSet[props.iconInsideLeft] ||
-      iconSet[`Fa${props.iconInsideLeft}` as unknown as never],
-    iconSet[props.iconInsideRight] ||
-      iconSet[`Fa${props.iconInsideRight}` as unknown as never],
-  ]
+  // const [IconOutsideLeft, IconOutsideRight, IconInsideLeft, IconInsideRight] = [
+  //   iconSet[props.iconOutsideLeft] ||
+  //     iconSet[`Fa${props.iconOutsideLeft}` as unknown as never],
+  //   iconSet[props.iconOutsideRight] ||
+  //     iconSet[`Fa${props.iconOutsideRight}` as unknown as never],
+  //   iconSet[props.iconInsideLeft] ||
+  //     iconSet[`Fa${props.iconInsideLeft}` as unknown as never],
+  //   iconSet[props.iconInsideRight] ||
+  //     iconSet[`Fa${props.iconInsideRight}` as unknown as never],
+  // ]
 
   const finalProps = {
     borderRadius,
@@ -38,15 +38,15 @@ export function Input(props: InputProps) {
         >
           {props.label && <label className="DUI-label">{props.label}</label>}
           <Flex className="DUI-flexInput">
-            {props.iconOutsideLeft && (
+            {/* {props.iconOutsideLeft && (
               <IconOutsideLeft
                 color={props.iconOutsideLeftColor}
                 className="DUI-iconOutsideLeft"
                 aria-hidden="true"
               />
-            )}
+            )} */}
             <Content>
-              {props.iconInsideLeft && (
+              {/* {props.iconInsideLeft && (
                 <IconInsideLeft
                   style={{
                     position: 'absolute',
@@ -58,14 +58,14 @@ export function Input(props: InputProps) {
                   className="DUI-iconInsideLeft"
                   aria-hidden="true"
                 />
-              )}
+              )} */}
               <InputContainer
                 props={finalProps}
                 type={props.type}
                 placeholder={props.textPlaceholder && props.textPlaceholder}
                 className="DUI-containerInput"
               />
-              {props.iconInsideRight && (
+              {/* {props.iconInsideRight && (
                 <IconInsideRight
                   style={{
                     position: 'absolute',
@@ -77,15 +77,15 @@ export function Input(props: InputProps) {
                   className="DUI-iconInsideRight"
                   aria-hidden="true"
                 />
-              )}
+              )} */}
             </Content>
-            {props.iconOutsideRight && (
+            {/* {props.iconOutsideRight && (
               <IconOutsideRight
                 color={props.iconOutsideRightColor}
                 className="DUI-iconOutsideRight"
                 aria-hidden="true"
               />
-            )}
+            )} */}
           </Flex>
         </Container>
       ) : (

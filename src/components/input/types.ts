@@ -3,7 +3,7 @@ import { HTMLAttributes } from 'react'
 import { TypesInput, border, inputSize } from './theme'
 import * as iconSet from 'react-icons/fa'
 
-export interface ButtonProps extends HTMLAttributes<HTMLInputElement> {
+export interface InputProps extends HTMLAttributes<HTMLInputElement> {
   type?: keyof typeof TypesInput
   border?: keyof typeof border
   inputSize?: keyof typeof inputSize
