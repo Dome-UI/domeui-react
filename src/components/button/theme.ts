@@ -11,5 +11,4 @@ export const buttonSize = {
   medium: '10px 12px',
   large: '10px 14px',
   xlarge: '14px 20px',
-  circle: '15px',
 }

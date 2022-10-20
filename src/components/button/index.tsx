@@ -1,10 +1,12 @@
 import React from 'react'
-import * as iconSet from 'react-icons/fa'
-import { Container } from './styles'
-import { ButtonProps } from './types'
+import { Slot } from '@radix-ui/react-slot';
+
+import { ButtonRootProps, ButtonIconProps } from './types'
 import { buttonSize, border } from './theme'
 
-export function Button(props: ButtonProps): JSX.Element {
+import { Container } from './styles'
+
+function ButtonRoot(props: ButtonRootProps): JSX.Element {
   const borderRadius = border[props.border]
   const padding = buttonSize[props.buttonSize]
 
@@ -14,40 +16,27 @@ export function Button(props: ButtonProps): JSX.Element {
     ...props,
   }
 
-  const [IconLeft, IconRight, IconCenter] = [
-    iconSet[props.IconLeft] ||
-      iconSet[`Fa${props.IconLeft}` as unknown as never],
-    iconSet[props.IconRight] ||
-      iconSet[`Fa${props.IconRight}` as unknown as never],
-    iconSet[props.IconCenter] ||
-      iconSet[`Fa${props.IconCenter}` as unknown as never],
-  ]
-
   return (
     <Container
       props={finalProps}
       className="DUI-button"
       role="button"
+      {...props}
     >
-      <>
-        {props.IconCenter ? (
-          <IconCenter className="DUI-iconCenter" role="img" title="Icon button"/>
-        ) : (
-          <>
-            {props.IconLeft && <IconLeft className="DUI-iconLeft" />}
-            {props.children ? props.children : props.label}
-            {props.IconRight && <IconRight className="DUI-iconRight" />}
-          </>
-        )}
-      </>
+      {props.children}
     </Container>
   )
 }
 
-Button.defaultProps = {
-  backgroundColor: '#F6BE27',
-  color: '#242424',
-  border: 'small',
-  buttonSize: 'medium',
-  fullWidth: false,
+ButtonRoot.displayName = 'Button.Root'
+
+function ButtonIcon({ children }: ButtonIconProps) {
+  return <Slot>{children}</Slot>
+}
+
+ButtonIcon.displayName = 'Button.Icon'
+
+export const Button = {
+  Root: ButtonRoot,
+  Icon: ButtonIcon,
 }

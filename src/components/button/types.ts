@@ -1,10 +1,9 @@
 /* eslint-disable @typescript-eslint/ban-types */
-import { HTMLAttributes } from 'react'
-import * as iconSet from 'react-icons/fa'
+import { ButtonHTMLAttributes, ReactNode } from 'react'
 import { buttonSize, border } from './theme'
 
-export interface ButtonProps extends HTMLAttributes<HTMLButtonElement> {
-  label?: string
+export interface ButtonRootProps
+  extends ButtonHTMLAttributes<HTMLButtonElement> {
   backgroundColor?: string
   color?: string
   fullWidth?: boolean
@@ -14,9 +13,11 @@ export interface ButtonProps extends HTMLAttributes<HTMLButtonElement> {
   buttonSize?: keyof typeof buttonSize
   border?: keyof typeof border
   styles?: {}
-  IconLeft?: keyof typeof iconSet
-  IconRight?: keyof typeof iconSet
-  IconCenter?: keyof typeof iconSet
+  children: ReactNode;
+}
+
+export interface ButtonIconProps {
+  children: ReactNode
 }
 
 export interface ButtonStylesProps {
@@ -28,7 +29,7 @@ export interface ButtonStylesProps {
     hoverColor?: string
     clickColor?: string
     styles?: {}
-    padding: string
-    borderRadius: string
+    padding?: string
+    borderRadius?: string
   }
 }
