@@ -5,6 +5,8 @@ import { SimpleCard } from './index'
 import { SimpleCardRootProps } from './types'
 import { FaArrowDown } from 'react-icons/fa'
 
+archi
+
 export default {
   title: 'Components/SimpleCard',
   component: SimpleCard.Root,
