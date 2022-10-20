@@ -1,5 +1,5 @@
 import styled from 'styled-components'
-import { ContainerIconProps, ContainerProps } from './types'
+import { ContainerProps } from './types'
 import { typograph as f } from '../../theme/typograph/typograph'
 
 export const Container = styled.div<ContainerProps>`
@@ -28,20 +28,17 @@ export const Container = styled.div<ContainerProps>`
     font-size: ${f.h4.fontSize};
     font-weight: ${f.h4.fontWeight.bold};
     line-height: ${f.h4.lineHeight};
-    text-align: ${(props) => props.props.positionTitle};
   }
 
   span {
     font-size: ${f.paragraphSmall.fontSize};
     line-height: ${f.paragraphSmall.lineHeight};
-    text-align: ${(props) => props.props.positionDescription};
   }
 
   ${(props) => props.props.styles};
 `
 
-export const ContainerIcon = styled.div<ContainerIconProps>`
+export const ContainerIcon = styled.div`
   width: 100%;
   display: flex;
-  justify-content: ${(props) => props.props.positionIcon};
 `

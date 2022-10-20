@@ -1,60 +1,66 @@
-import React from 'react'
+import React, { ReactNode } from 'react'
 import { ContainerIcon, Container } from './styles'
-import { CardProps } from './types'
-import * as iconSet from 'react-icons/fa'
+import {
+  SimpleCardRootProps,
+  SimpleCardIconProps,
+  SimpleCardTitleProps,
+  SimpleCardDescriptionProps,
+} from './types'
 
-import { position, border, shadow } from './theme'
+import { border, shadow } from './theme'
 
-export function SimpleCard(props: CardProps) {
-  const align = position[props.positionTitle]
+function SimpleCardRoot({ children, ...props }: SimpleCardRootProps) {
   const borderRadius = border[props.border]
   const boxShadow = shadow[props.shadow]
 
   const finalProps = {
     borderRadius,
-    align,
     boxShadow,
     ...props,
   }
 
-  const Icon =
-    iconSet[props.icon] || iconSet[`Fa${props.icon}` as unknown as never]
-
   return (
     <Container props={finalProps} className="DUI-container-SimpleCard">
-      {/* Icon */}
-      {props.showIcon && (
-        <ContainerIcon
-          props={finalProps}
-          className="DUI-containerIcon-SimpleCard"
-          aria-hidden="true"
-        >
-          <Icon
-            color={props.iconColor}
-            fontSize="24px"
-            className="DUI-icon-SimpleCard"
-          />
-        </ContainerIcon>
-      )}
-      {/* Title */}
-      {props.title && <p className="DUI-title-SimpleCard">{props.title}</p>}
-      {/* Description */}
-      {props.description && (
-        <span className="DUI-description-SimpleCard" role="contentinfo">
-          {props.description}
-        </span>
-      )}
+      {children}
     </Container>
   )
 }
 
-SimpleCard.defaultProps = {
-  fullWidth: false,
-  border: 'small',
-  shadow: 'default',
-  showIcon: true,
-  icon: 'ArrowUp',
-  positionTitle: 'start',
-  positionDescription: 'start',
-  positionIcon: 'start',
+SimpleCardRoot.displayName = 'SimpleCard.Root'
+
+function SimpleCardIcon({ children }: SimpleCardIconProps) {
+  return (
+    <ContainerIcon
+      // props={finalProps}
+      className="DUI-containerIcon-SimpleCard"
+      aria-hidden="true"
+    >
+      {children}
+    </ContainerIcon>
+  )
+}
+
+SimpleCardIcon.displayName = 'SimpleCard.Icon'
+
+function SimpleCardTitle({ children }: SimpleCardTitleProps) {
+  return <p className="DUI-title-SimpleCard">{children}</p>
+}
+
+SimpleCardTitle.displayName = 'SimpleCard.Title'
+
+function SimpleCardDescription({ children }: SimpleCardDescriptionProps) {
+  return (
+    <span className="DUI-description-SimpleCard" role="contentinfo">
+      {children}
+    </span>
+  )
+}
+
+SimpleCardDescription.displayName = 'SimpleCard.Description'
+
+export const SimpleCard = {
+  Root: SimpleCardRoot,
+  Title: SimpleCardTitle,
+  Description: SimpleCardDescription,
+  Icon: SimpleCardIcon,
 }

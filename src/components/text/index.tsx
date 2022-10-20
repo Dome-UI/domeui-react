@@ -44,12 +44,3 @@ export function Text(props: TextProps): JSX.Element {
     </FinalTag>
   )
 }
-
-// Text.defaultProps = {
-//   fontSize: 'md',
-//   fontWeight: 'normal',
-//   lineHeight: 'normal',
-//   letterSpacing: 'normal',
-//   textDecoration: 'none',
-//   tag: 'p',
-// }

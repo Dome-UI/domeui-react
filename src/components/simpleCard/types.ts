@@ -1,25 +1,27 @@
 /* eslint-disable @typescript-eslint/ban-types */
-import { HTMLAttributes } from 'react'
-import * as iconSet from 'react-icons/fa'
+import { ReactNode } from 'react'
 import { position, border, shadow } from './theme'
 
-export interface CardProps extends HTMLAttributes<HTMLDivElement> {
-  title?: string
-  positionTitle: keyof typeof position
+export interface SimpleCardRootProps {
+  children: ReactNode
 
   border: keyof typeof border
   shadow: keyof typeof shadow
 
-  showIcon?: boolean
-  icon: keyof typeof iconSet
-  iconColor?: string
-  positionIcon?: keyof typeof position
-
-  description?: string
-  positionDescription?: keyof typeof position
-
   fullWidth?: boolean
   styles?: {}
+}
+
+export interface SimpleCardIconProps {
+  children: ReactNode
+}
+
+export interface SimpleCardTitleProps {
+  children: ReactNode
+}
+
+export interface SimpleCardDescriptionProps {
+  children: ReactNode
 }
 
 export interface ContainerProps {
@@ -27,14 +29,6 @@ export interface ContainerProps {
     fullWidth?: boolean
     borderRadius?: string
     boxShadow?: string
-    positionTitle?: keyof typeof position
-    positionDescription?: keyof typeof position
     styles?: {}
-  }
-}
-
-export interface ContainerIconProps {
-  props: {
-    positionIcon?: keyof typeof position
   }
 }
