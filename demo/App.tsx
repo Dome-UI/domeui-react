@@ -1,11 +1,16 @@
 import React from 'react'
 
 import { Button } from '../src/components/button'
+import { Text } from '../src/components/text'
 
 export function App() {
   return (
     <div>
-      <h1>Testing your component.</h1>
+      <Text tag="h1">Testing your components.</Text>
+
+      <Text>
+        Button component
+      </Text>
       <Button.Root
         backgroundColor="#F6BE27"
         border="small"

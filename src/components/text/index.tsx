@@ -40,16 +40,16 @@ export function Text(props: TextProps): JSX.Element {
         ...props.styles,
       }}
     >
-      {props.label}
+      {props.children}
     </FinalTag>
   )
 }
 
-Text.defaultProps = {
-  fontSize: 'md',
-  fontWeight: 'normal',
-  lineHeight: 'normal',
-  letterSpacing: 'normal',
-  textDecoration: 'none',
-  tag: 'p',
-}
+// Text.defaultProps = {
+//   fontSize: 'md',
+//   fontWeight: 'normal',
+//   lineHeight: 'normal',
+//   letterSpacing: 'normal',
+//   textDecoration: 'none',
+//   tag: 'p',
+// }

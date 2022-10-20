@@ -1,5 +1,5 @@
 /* eslint-disable @typescript-eslint/ban-types */
-import { HTMLAttributes } from 'react'
+import { HTMLAttributes, ReactNode } from 'react'
 import {
   fontSize,
   fontWeight,
@@ -9,7 +9,7 @@ import {
 } from './theme'
 
 export interface TextProps extends HTMLAttributes<HTMLParagraphElement> {
-  label?: string
+  children?: ReactNode;
   tag?:
     | 'h1'
     | 'h2'

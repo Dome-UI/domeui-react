@@ -1,10 +1,16 @@
-import { Meta, Story, Canvas, ArgsTable } from '@storybook/addon-docs'
-import { Text } from './index'
+import React from 'react'
+import { Meta, StoryObj } from '@storybook/react'
 
-<Meta
-  title="Components/Text"
-  component={Text}
-  argTypes={{
+import { Text } from './index'
+import { TextProps } from './types'
+
+export default {
+  title: 'Components/Text',
+  component: Text,
+  args: {
+    children: 'Lorem ipsum',
+  },
+  argTypes: {
     fontSize: {
       name: 'Font size',
       control: {
@@ -57,7 +63,9 @@ import { Text } from './index'
       },
     },
     label: {
-      name: 'Text',
+      table: {
+        disable: true,
+      },
     },
     color: {
       name: 'Text color',
@@ -74,32 +82,10 @@ import { Text } from './index'
         category: 'Others',
       },
     },
-  }}
-  parameters={{
+  },
+  parameters: {
     layout: 'centered',
-  }}
-/>
+  },
+} as Meta<TextProps>
 
-# Text
-
-Text is the component that you use, for get user taps and clicks.
-
-```js
-import { Text } from 'domeui-react'
-```
-
-### Classnames
-
-```css
-/* Text */
-.DUI-text {
-}
-```
-
-<Canvas columns={2} withSource="open" withToolbar>
-  <Story name="Default" args={{ ...Text.defaultProps, label: 'Text default' }}>
-    {(args) => <Text {...args} />}
-  </Story>
-</Canvas>
-
-<ArgsTable story="Default" />
+export const Default: StoryObj<TextProps> = {}
