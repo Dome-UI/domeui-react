@@ -1,12 +1,14 @@
 /* eslint-disable @typescript-eslint/ban-types */
-import { ReactNode } from 'react'
+import { HTMLAttributes, ReactNode } from 'react'
 import { position, border, shadow } from './theme'
 
-export interface SimpleCardRootProps {
+export interface SimpleCardRootProps extends HTMLAttributes<HTMLDivElement> {
   children: ReactNode
 
-  border: keyof typeof border
-  shadow: keyof typeof shadow
+  border?: keyof typeof border
+  shadow?: keyof typeof shadow
+
+  positionIcon?: keyof typeof position
 
   fullWidth?: boolean
   styles?: {}
@@ -24,11 +26,13 @@ export interface SimpleCardDescriptionProps {
   children: ReactNode
 }
 
-export interface ContainerProps {
+export interface SimpleCardContainerStyleProps {
   props: {
     fullWidth?: boolean
     borderRadius?: string
     boxShadow?: string
     styles?: {}
+
+    positionIcon?: string
   }
 }

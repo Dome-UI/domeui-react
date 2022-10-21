@@ -1,8 +1,8 @@
 import styled from 'styled-components'
-import { ContainerProps } from './types'
+import { SimpleCardContainerStyleProps } from './types'
 import { typograph as f } from '../../theme/typograph/typograph'
 
-export const Container = styled.div<ContainerProps>`
+export const Container = styled.div<SimpleCardContainerStyleProps>`
   * {
     margin: 0;
     padding: 0;

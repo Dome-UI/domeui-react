@@ -28,12 +28,12 @@ function SimpleCardRoot({ children, ...props }: SimpleCardRootProps) {
 
 SimpleCardRoot.displayName = 'SimpleCard.Root'
 
-function SimpleCardIcon({ children }: SimpleCardIconProps) {
+function SimpleCardIcon({ children, ...props }: SimpleCardIconProps) {
   return (
     <ContainerIcon
-      // props={finalProps}
       className="DUI-containerIcon-SimpleCard"
       aria-hidden="true"
+      {...props}
     >
       {children}
     </ContainerIcon>

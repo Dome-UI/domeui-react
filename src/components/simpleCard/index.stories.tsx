@@ -5,8 +5,6 @@ import { SimpleCard } from './index'
 import { SimpleCardRootProps } from './types'
 import { FaArrowDown } from 'react-icons/fa'
 
-archi
-
 export default {
   title: 'Components/SimpleCard',
   component: SimpleCard.Root,
@@ -29,12 +27,14 @@ export default {
     },
     border: {
       name: 'Border card',
+      options: ['none', 'small', 'medium', 'large', 'xlarge'],
       control: {
         type: 'inline-radio',
       },
     },
     shadow: {
       name: 'Shadow card',
+      options: ['light', 'default', 'medium', 'large', 'none'],
       control: {
         type: 'inline-radio',
       },
@@ -58,17 +58,3 @@ export default {
 } as Meta<SimpleCardRootProps>
 
 export const Default: StoryObj<SimpleCardRootProps> = {}
-
-export const OnlyTitle: StoryObj<SimpleCardRootProps> = {
-  args: {
-    children: [<SimpleCard.Title>Title card</SimpleCard.Title>],
-  },
-}
-
-export const OnlyDescription: StoryObj<SimpleCardRootProps> = {
-  args: {
-    children: [
-      <SimpleCard.Description>Description card</SimpleCard.Description>,
-    ],
-  },
-}
