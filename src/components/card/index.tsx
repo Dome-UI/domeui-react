@@ -1,179 +1,95 @@
 import React, { useState } from 'react'
-import { Container, Header, Footer } from './styles'
-import { CardProps } from './types'
-import * as iconSet from 'react-icons/fa'
+import { Container, Image, Header, Title, Description } from './styles'
+import {
+  CardRootProps,
+  CardHeaderProps,
+  CardIconProps,
+  CardTitleProps,
+  CardImageProps,
+  CardDescriptionProps,
+} from './types'
 
-import { FaArrowUp, FaArrowDown } from 'react-icons/fa'
-import { positionTitle, border, shadow } from './theme'
+import { border, shadow } from './theme'
+import { Slot } from '@radix-ui/react-slot'
 
-export function Card(props: CardProps) {
+function CardRoot({ children, ...props }: CardRootProps) {
+  return (
+    <Container border={border[props.border]} shadow={shadow[props.shadow]}>
+      {children}
+    </Container>
+  )
+}
+
+CardRoot.displayName = 'Card.Root'
+
+function CardHeader({ children }: CardHeaderProps) {
+  return <Header>{children}</Header>
+}
+
+CardHeader.displayName = 'Card.Header'
+
+function CardIcon({ children }: CardIconProps) {
+  return <Slot>{children}</Slot>
+}
+
+CardIcon.displayName = 'Card.Icon'
+
+function CardTitle({ children }: CardTitleProps) {
+  return <Title>{children}</Title>
+}
+
+CardTitle.displayName = 'Card.Title'
+
+function CardImage({ url, alt }: CardImageProps) {
+  return <Image src={url} alt={alt} />
+}
+
+CardImage.displayName = 'Card.Image'
+
+function CardDescription({ children }: CardDescriptionProps) {
   const [descriptionVisible, setDescriptionVisible] = useState(false)
-  const textAlign = positionTitle[props.positionTitle]
-  const borderRadius = border[props.border]
-  const boxShadow = shadow[props.shadow]
-
-  const finalProps = {
-    borderRadius,
-    textAlign,
-    boxShadow,
-    ...props,
-  }
 
   function handleDescriptionVisible() {
     setDescriptionVisible(!descriptionVisible)
   }
 
-  const [
-    ButtonLeftTitle,
-    ButtonRightTitle,
-    ButtonLeftDescription,
-    ButtonRightDescription,
-  ] = [
-    iconSet[props.buttonLeftTitle] ||
-      iconSet[`Fa${props.buttonLeftTitle}` as unknown as never],
-    iconSet[props.buttonRightTitle] ||
-      iconSet[`Fa${props.buttonRightTitle}` as unknown as never],
-    iconSet[props.buttonRightDescription] ||
-      iconSet[`Fa${props.buttonRightDescription}` as unknown as never],
-    iconSet[props.buttonRightDescription] ||
-      iconSet[`Fa${props.buttonRightDescription}` as unknown as never],
-  ]
-
   return (
-    <Container
-      descriptionVisible
-      props={finalProps}
-      className="DUI-containerCard"
-    >
-      {/* Header */}
-      <Header props={finalProps} className="DUI-containerHeader">
-        {props.buttonLeftTitle && (
-          <a
-            href={props.buttonLeftTitleHref}
-            target="_blank"
-            className="DUI-buttonLeftTitleHref"
-            role="link"
-            aria-label="External link"
-          >
-            <ButtonLeftTitle
-              color={props.buttonLeftTitleColor}
-              fontSize="24px"
-              className="DUI-buttonLeftTitleIcon"
-            />
-          </a>
-        )}
-
-        {props.title && <p className="DUI-cardTitle">{props.title}</p>}
-
-        {props.buttonRightTitle && (
-          <a
-            href={props.buttonRightTitleHref}
-            target="_blank"
-            className="DUI-buttonRightTitleHref"
-            role="link"
-            aria-label="External link"
-          >
-            <ButtonRightTitle
-              color={props.buttonRightTitleColor}
-              className="DUI-buttonRightTitleIcon"
-            />
-          </a>
-        )}
-      </Header>
-
-      {/* Image */}
-      {props.imageUrl && (
-        <img
-          src={props.imageUrl}
-          className="DUI-imageCard"
-          alt={props.imageAlt ? props.imageAlt : 'Default Alt'}
-        />
+    <Description>
+      {descriptionVisible ? <span>{children}</span> : null}
+      {descriptionVisible ? (
+        <button onClick={handleDescriptionVisible}>See less</button>
+      ) : (
+        <button onClick={handleDescriptionVisible}>View more</button>
       )}
-
-      {/* Footer */}
-      {props.buttonRightDescription ||
-      props.buttonReadMore ||
-      props.buttonLeftDescription ? (
-        <Footer className="DUI-containerFooter">
-          {props.description && descriptionVisible && (
-            <span className="DUI-descriptionText">{props.descriptionText}</span>
-          )}
-
-          <div>
-            <div>
-              {props.buttonLeftDescription && (
-                <a
-                  href={props.buttonLeftDescriptionHref}
-                  target="_blank"
-                  className="DUI-buttonLeftDescriptionHref"
-                  role="link"
-                  aria-label="External link"
-                >
-                  <ButtonLeftDescription
-                    color={props.buttonLeftDescriptionColor}
-                    fontSize="24px"
-                    className="DUI-buttonLeftDescriptionIcon"
-                  />
-                </a>
-              )}
-              {props.buttonRightDescription && (
-                <a
-                  href={props.buttonRightDescriptionHref}
-                  target="_blank"
-                  className="DUI-buttonRightDescriptionHref"
-                  role="link"
-                  aria-label="External link"
-                >
-                  <ButtonRightDescription
-                    color={props.buttonRightDescriptionColor}
-                    fontSize="24px"
-                    className="DUI-buttonRightDescriptionIcon"
-                  />
-                </a>
-              )}
-            </div>
-
-            {props.buttonReadMore && descriptionVisible ? (
-              <button
-                onClick={handleDescriptionVisible}
-                className="DUI-buttonReadMore"
-              >
-                See less
-                <FaArrowUp className="DUI-buttonReadMoreIcon" />
-              </button>
-            ) : (
-              props.buttonReadMore &&
-              !descriptionVisible && (
-                <button
-                  onClick={handleDescriptionVisible}
-                  className="DUI-buttonReadMore"
-                >
-                  View more
-                  <FaArrowDown className="DUI-buttonReadMoreIcon" />
-                </button>
-              )
-            )}
-          </div>
-        </Footer>
-      ) : null}
-    </Container>
+    </Description>
   )
 }
 
-Card.defaultProps = {
-  backgroundColor: '#FFFFFF',
-  buttonLeftTitleHref: '/',
-  buttonRightTitleHref: '/',
-  buttonLeftDescriptionHref: '/',
-  buttonRightDescriptionHref: '/',
+CardDescription.displayName = 'Card.Description'
 
-  buttonLeftTitleColor: '#6648FF',
-  buttonRightTitleColor: '#6648FF',
-  buttonLeftDescriptionColor: '#6648FF',
-  buttonRightDescriptionColor: '#6648FF',
-
-  imageAlt: '',
-
-  border: 'small',
-  shadow: 'medium',
+export const Card = {
+  Root: CardRoot,
+  Header: CardHeader,
+  Icon: CardIcon,
+  Title: CardTitle,
+  Image: CardImage,
+  Description: CardDescription,
 }
+
+// Card.defaultProps = {
+//   backgroundColor: '#FFFFFF',
+//   buttonLeftTitleHref: '/',
+//   buttonRightTitleHref: '/',
+//   buttonLeftDescriptionHref: '/',
+//   buttonRightDescriptionHref: '/',
+
+//   buttonLeftTitleColor: '#6648FF',
+//   buttonRightTitleColor: '#6648FF',
+//   buttonLeftDescriptionColor: '#6648FF',
+//   buttonRightDescriptionColor: '#6648FF',
+
+//   imageAlt: '',
+
+//   border: 'small',
+//   shadow: 'medium',
+// }

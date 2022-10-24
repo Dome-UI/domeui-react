@@ -1,7 +1,5 @@
 export { Button } from './components/button'
 export { Card }  from './components/card'
-export { SectionContainer } from './components/container'
-export { Flex } from './components/flex'
 export { Input } from './components/input'
 export { SimpleCard } from './components/simpleCard'
 export { Text } from './components/text'

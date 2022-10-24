@@ -1,5 +1,7 @@
 import { themes } from '@storybook/theming'
 
+import '../src/theme/reset.css'
+
 export const parameters = {
   actions: { argTypesRegex: '^on[A-Z].*' },
   controls: {

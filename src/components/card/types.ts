@@ -1,50 +1,35 @@
-/* eslint-disable @typescript-eslint/ban-types */
-import * as iconSet from 'react-icons/fa'
+import { HTMLAttributes, ImgHTMLAttributes, ReactNode } from 'react'
 import { positionTitle, border, shadow } from './theme'
 
-export interface CardProps {
-  title?: string
-  positionTitle?: keyof typeof positionTitle
-  imageUrl?: string
-  imageAlt?: string
-  backgroundColor?: string
+export interface CardRootProps {
+  children?: ReactNode
+
   border?: keyof typeof border
   shadow?: keyof typeof shadow
+}
 
-  buttonLeftTitle?: keyof typeof iconSet
-  buttonLeftTitleHref?: string
-  buttonLeftTitleColor?: string
+export interface CardHeaderProps {
+  children?: ReactNode
+}
 
-  buttonRightTitle?: keyof typeof iconSet
-  buttonRightTitleHref?: string
-  buttonRightTitleColor?: string
+export interface CardIconProps {
+  children?: ReactNode
+}
 
-  buttonLeftDescription?: keyof typeof iconSet
-  buttonLeftDescriptionHref?: string
-  buttonLeftDescriptionColor?: string
+export interface CardTitleProps extends HTMLAttributes<HTMLParagraphElement> {
+  children?: string
+}
 
-  buttonRightDescription?: keyof typeof iconSet
-  buttonRightDescriptionHref?: string
-  buttonRightDescriptionColor?: string
+export interface CardImageProps extends ImgHTMLAttributes<HTMLImageElement> {
+  url?: string
+  alt?: string
+}
 
-  buttonReadMore?: boolean
-  descriptionText?: string
-  description?: boolean
-  styles?: {}
+export interface CardDescriptionProps {
+  children?: ReactNode
 }
 
 export interface ContainerProps {
-  descriptionVisible?: boolean
-  props: {
-    backgroundColor?: string
-    borderRadius?: string
-    boxShadow?: string
-    styles?: {}
-  }
-}
-
-export interface HeaderProps {
-  props: {
-    textAlign?: string
-  }
+  border?: string
+  shadow?: string
 }
